@@ -60,14 +60,21 @@ function askMainMenuChoice() {
 }
 
 function askMvolaMenuChoice() {
- // clearTimeout(inactivityTimeout);
-  //inactivityTimeout = setTimeout(exitDueToInactivity, 5000);
+  clearTimeout(inactivityTimeout);
+  inactivityTimeout = setTimeout(exitDueToInactivity, 5000);
 
   rl.question("Choisissez une option MVOLA : ", (choice) => {
     switch (choice.trim()) {
       case "0":
         showMainMenu();
         break;
+    case "1":
+        buyCreditOrOffre();
+        askCreditForMe();
+        break;
+      case "2":
+        transfertMoney();
+        break;    
       case "#":
         moreMvolaChoice();
         askMvolaMenuChoice();
@@ -89,4 +96,67 @@ function moreMvolaChoice(){
 }
 
 
+
+function buyCreditOrOffre(){
+    console.clear();
+    console.log("Acheter Credit ou Offre Yas");
+    console.log("1 Credit pour mon numéro");
+    console.log("2 Credit pour autre numéro");
+    console.log("3 Offre pour mon numéro");
+    console.log("4 Offre pour autre numéro");
+}
+function transfertMoney(){
+    console.clear();
+    console.log("Entrez numéro de tel.");
+    console.log("Destinataire ou:");
+    console.log("0 Sans numero");
+    console.log("5 MVola epargne");
+    console.log("6 Rempbourser une avance");
+    console.log("9 repertoire Mvola");    
+}
+
+function askCreditForMe(){
+    rl.question("Credit a envoyer : ", (choice)=>{
+        switch (choice.trim()) {
+            case "1":
+                creditTosend();
+                askCodeOrDirect();
+                break;
+        
+            default:
+                break;
+        }
+    })
+}
+
+function creditTosend(){
+    console.clear();
+    console.log("1 Recharger directement");
+    console.log("2 Code de recharge");
+}
+function askCodeOrDirect(){
+    rl.question("Entrez votre choix : ",(choice)=>{
+        switch (choice.trim()) {
+            case "1":
+                showDirect();
+                break;
+             case "2":
+                useCode();
+                break;
+            default:
+                break;
+        }
+    } )
+}
+
+function showDirect(){
+    console.clear();
+    console.log("Montant: ");
+}
+
+function useCode(){
+    console.clear();
+    console.log("Entrer votre code de rechargement : ");
+    
+}
 showMainMenu();

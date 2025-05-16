@@ -1,5 +1,32 @@
 {
   "devDependencies": {
-    "@types/node": "^22.15.18"
-  }
+    "@eslint/js": "^9.26.0",
+    "@types/node": "^22.15.18",
+    "eslint": "^9.26.0",
+    "globals": "^16.1.0",
+    "typescript-eslint": "^8.32.1"
+  },
+  "name": "prog-5-ussd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "undici-types": "^6.21.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "lint": "eslint . --ext .ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rado23-04/prog-5-ussd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Rado23-04/prog-5-ussd/issues"
+  },
+  "homepage": "https://github.com/Rado23-04/prog-5-ussd#readme"
 }

@@ -60,14 +60,18 @@ function askMainMenuChoice() {
 }
 
 function askMvolaMenuChoice() {
-  clearTimeout(inactivityTimeout);
-  inactivityTimeout = setTimeout(exitDueToInactivity, 5000);
+ // clearTimeout(inactivityTimeout);
+  //inactivityTimeout = setTimeout(exitDueToInactivity, 5000);
 
   rl.question("Choisissez une option MVOLA : ", (choice) => {
     switch (choice.trim()) {
       case "0":
         showMainMenu();
         break;
+      case "#":
+        moreMvolaChoice();
+        askMvolaMenuChoice();
+        break;  
       default:
         console.log("Fonctionnalité non encore implémentée.");
         askMvolaMenuChoice();
@@ -75,5 +79,14 @@ function askMvolaMenuChoice() {
     }
   });
 }
+
+function moreMvolaChoice(){
+    console.clear()
+    console.log("5 Paiement & Parteneire");
+    console.log("6 Mon compte");
+    console.log("7 Recevoir de l'argent");
+    console.log("8 Banque et Micro-Finance");
+}
+
 
 showMainMenu();
